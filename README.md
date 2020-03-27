@@ -19,7 +19,7 @@ To use the workout-tracker application go to the [deployed link](#Deployed-Link)
 
 Home page with information of the last workout:
 
-<img src="https://github.com/MeganLCoppins/workout-tracker/blob/master/images/fitnesstrackeradd.png?raw=true" alt="home page">
+<img src="https://github.com/MeganLCoppins/workout-tracker/blob/master/images/fitnesstrackerhome.png?raw=true" alt="home page">
 
 Adding a cardio exercise to workout:
 
