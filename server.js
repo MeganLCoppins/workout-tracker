@@ -68,24 +68,25 @@ app.post("/api/workouts", ({ body }, res) => {
 });
 
 // put
-//const res = await fetch("/api/workouts/" + id, {
+// const res = await fetch("/api/workouts/" + id, {
 // app.put("/api/workouts/:id", ({ body }, res) => {
 //   db.Wo;
 // });
+app.put("/api/workouts/:id", (req, res) => {
 
-
-// app.post("/api/workouts", ({ body }, res) => {
-//   db.Workout.create(body)
-//     .then(({ _id }) =>
-//       db.Library.findOneAndUpdate({}, { $push: { books: _id } }, { new: true })
-//     )
-//     .then(dbLibrary => {
-//       res.json(dbLibrary);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
+    db.Workout.findByIdAndUpdate(
+        req.params.id,
+        {
+            $push:{exercises:req.body}
+        }
+    )
+      .then(dbWorkout => {
+        res.json(dbWorkout);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
