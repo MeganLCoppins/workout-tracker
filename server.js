@@ -20,23 +20,15 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true
 });
 // routing
-// put
-//const res = await fetch("/api/workouts/" + id, {
-    
-// post
-// const res = await fetch("/api/workouts", {
-// app.post("/api/workouts", ({ body }, res) => {
-//   db.Workout.create(body)
-//     .then(({ _id }) =>
-//       db.Library.findOneAndUpdate({}, { $push: { books: _id } }, { new: true })
-//     )
-//     .then(dbLibrary => {
-//       res.json(dbLibrary);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
+app.get("/", function(req, res) {
+  res.sendFile(path.join(_dirname + "./public/index.html"));
+});
+app.get("/stats", function(req, res) {
+  res.sendFile(path.join(__dirname, "./public/stats.html"));
+});
+app.get("/exercise", function(req, res) {
+  res.sendFile(path.join(_dirname + "./public/exercise.html"));
+});
 
 // get (find all)
 // res = await fetch("/api/workouts");
@@ -62,31 +54,31 @@ app.get("/api/workouts/range", (req, res) => {
       res.json(err);
     });
 });
-app.get("/stats", function(req, res) {
-  res.sendFile(path.join(__dirname, "./public/stats.html"));
-});
 
-app.get("/library", (req, res) => {
-  db.Library.find({})
-    .then(dbLibrary => {
-      res.json(dbLibrary);
+// post
+// const res = await fetch("/api/workouts", {
+app.post("/api/workouts", ({ body }, res) => {
+  db.Workout.create(body)
+    .then(dbWorkout => {
+      res.json(dbWorkout);
     })
     .catch(err => {
       res.json(err);
     });
 });
 
-// db.Library.create({ name: "Campus Library" })
-//   .then(dbLibrary => {
-//     console.log(dbLibrary);
-//   })
-//   .catch(({message}) => {
-//     console.log(message);
-//   });
+// put
+//const res = await fetch("/api/workouts/" + id, {
+// app.put("/api/workouts/:id", ({ body }, res) => {
+//   db.Wo;
+// });
 
-// app.get("/populated", (req, res) => {
-//   db.Library.find({})
-//     .populate("books")
+
+// app.post("/api/workouts", ({ body }, res) => {
+//   db.Workout.create(body)
+//     .then(({ _id }) =>
+//       db.Library.findOneAndUpdate({}, { $push: { books: _id } }, { new: true })
+//     )
 //     .then(dbLibrary => {
 //       res.json(dbLibrary);
 //     })
