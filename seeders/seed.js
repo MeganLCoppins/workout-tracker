@@ -123,7 +123,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-1),
+    day: new Date().setDate(new Date().getDate()-7),
     exercises: [
       {
         type: "resistance",
