@@ -4,6 +4,10 @@
 
 I created a workout tracker application allowing users to view, create, and track their daily workouts. The user is able to add multiple exercises to a workout on a given day. With each resistance exercise the user is able to track the name, type, weight, sets, reps and duration of the exercise. If the user is adding a cardio exercise they are able to track the name, type, duration, and distance traveled. 
 
+## Usage
+
+To use the workout-tracker application go to the [deployed link](#Deployed).
+
 ## Demonstration
 
 Home page with information of the last workout:
@@ -21,10 +25,6 @@ Adding a resistance exercise to workout:
 Viewing workout stats:
 
 <img src="https://github.com/MeganLCoppins/workout-tracker/blob/master/images/fitnesstrackerstats.png?raw=true" alt="workout stats">
-
-## Usage
-
-To use the workout-tracker application go to the [deployed link](#Deployed).
 
 ## Technologies Used
 
